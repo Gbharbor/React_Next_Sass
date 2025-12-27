@@ -29,7 +29,7 @@ const Page = () => {
    // Exemplo de useEffect sem dependências: executa apenas na montagem do componente
    useEffect(() => {
       console.log('Executou o useEffect na montagem');
-   }, []);
+   }, []); //dentro dessa array tu escolhe o que quer monitorar, digamos que foce apenas name ou apenas age, quando for executar ira executar apenas o que tu colocou para monitorar dentro do array.
 
    // Exemplo de useEffect com dependências: executa sempre que firstName ou lastName mudar
    useEffect(() => {
@@ -41,10 +41,14 @@ const Page = () => {
          <p>Meu nome é {fullName}</p>
          <input defaultValue={fullName} />
          <hr/>
-         <button className="border border-blue-600 m-3 p-3" onClick={() => setFirstName('Porto')}>Mudar p/ Porto</button>
-         <button className="border border-blue-600 m-3 p-3" onClick={() => setFirstName('Harbor')}>Mudar p/ Harbor</button>
-         <button className="border border-blue-600 m-3 p-3" onClick={() => setAge(10)}>Mudar p/ 10 anos</button>
-         <button className="border border-blue-600 m-3 p-3" onClick={() => setAge(90)}>Mudar p/ 90 anos</button>
+         <button className="border border-blue-600 m-3 p-3" 
+         onClick={() => setFirstName('Porto')}>Mudar p/ Porto</button>
+         <button className="border border-blue-600 m-3 p-3" 
+         onClick={() => setFirstName('Harbor')}>Mudar p/ Harbor</button>
+         <button className="border border-blue-600 m-3 p-3" 
+         onClick={() => setAge(10)}>Mudar p/ 10 anos</button>
+         <button className="border border-blue-600 m-3 p-3" 
+         onClick={() => setAge(90)}>Mudar p/ 90 anos</button>
       </div>
    );
 };

@@ -1,21 +1,42 @@
 "use client"
-
-import { VideoPlayer } from "@/components/mod4/c4VideoPlayer";
 import { useState } from "react";
+import { Item } from "@/types/mod4/c6item";
 
-const Page =() => {
-   const [playing, setPlaying] = useState(false);
-   return (
-      <div className="border border-white p-3 mb-4">
-         <div>
-            <p className="text-2xl text-blue-700 mb-3">{playing ? 'rodando' : 'pausado'}</p>
-            <button className="bg-blue-700 rounded-md p-3 text-black" onClick={()=> setPlaying(!playing)}>Play/Pause</button>
-         </div>
-         <VideoPlayer
-            src="https://interactive-examples.mdn.mozilla.net/media/cc0-video/flower.mp4"
-            isPlaying={playing}
-         />
-      </div>
-   );
-}
+const Page = () => {
+   // Estado para armazenar a lista de itens
+   const [list, setList] = useState<Item[]>([]);
+
+   // Função para adicionar um novo item à lista
+   const addNewItem = (text: string) => {
+      setList([...list, { id: list.length, text, done: false }]);
+   };
+
+   // Função para editar o texto de um item específico
+   const editItemText = (id: number, newText: string) => {
+      setList(
+         list.map(t => {
+            if (t.id === id) t.text = newText; 
+            return t;
+         })
+      );
+   };
+
+   // Função para alternar o estado (feito/não feito) de um item
+   const toggleItem = (id: number) => {
+      setList(
+         list.map(t => {
+            if (t.id === id) t.done = !t.done;
+            return t;
+         })
+      );
+   };
+
+   // Função para remover um item da lista
+   const removeItem = (id: number) => {
+      setList(list.filter(t => t.id !== id));
+   };
+
+   return <div className=""></div>;
+};
+
 export default Page;

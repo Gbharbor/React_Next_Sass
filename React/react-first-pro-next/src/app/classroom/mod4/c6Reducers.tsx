@@ -1,3 +1,4 @@
+"use client"
 import { useState } from "react";
 import { Item } from "@/types/mod4/c6item";
 
