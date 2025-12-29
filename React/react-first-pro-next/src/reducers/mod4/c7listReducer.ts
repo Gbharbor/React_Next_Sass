@@ -1,4 +1,5 @@
 import { Item } from "@/types/mod4/c6item";
+import { type } from "os";
 type AddAction = {
    type: 'add';
    payload: {text: string;}
@@ -18,8 +19,28 @@ type RemoveAction = {
 type ListActions = AddAction | EditTextAction | ToggleDoneAction | RemoveAction;
 
 export const listReducer = (list:Item[], action: ListActions) => {
-   //executar alguma acao 
-   action.type
-   //action.payload
-   return list;
+   switch(action.type) {
+      case 'add':
+         return [...list, { 
+            id: list.length, 
+            text: action.payload.text, 
+            done: false 
+         }]
+      case 'ediText':
+         return list.map(t => {
+            if (t.id === action.payload.id) {
+               t.text = action.payload.newText; 
+            }
+            return t;
+         })
+      case 'toggleDone':
+         return list.map(t => {
+            if (t.id === action.payload.id) t.done = !t.done;
+            return t;
+         })
+      case 'remove':
+         return list.filter(t => t.id !== action.payloead.id);
+      default:
+         return list;
+   }
 }
