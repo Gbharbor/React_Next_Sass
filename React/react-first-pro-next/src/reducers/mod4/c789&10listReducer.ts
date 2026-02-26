@@ -1,11 +1,11 @@
-import { Item } from "@/types/mod4/c6item";
+import { Item } from "@/types/mod4/c67item";
 import { type } from "os";
 type AddAction = {
    type: 'add';
    payload: {text: string;}
 }
 type EditTextAction = {
-   type: 'ediText';
+   type: 'editText';
    payload: {id: number; newText: string;}
 }
 type ToggleDoneAction = {
@@ -26,7 +26,7 @@ export const listReducer = (list:Item[], action: ListActions) => {
             text: action.payload.text, 
             done: false 
          }]
-      case 'ediText':
+      case 'editText':
          return list.map(t => {
             if (t.id === action.payload.id) {
                t.text = action.payload.newText; 

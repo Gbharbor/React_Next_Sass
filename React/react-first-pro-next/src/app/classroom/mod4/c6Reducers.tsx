@@ -1,6 +1,6 @@
 "use client"
 import { useState } from "react";
-import { Item } from "@/types/mod4/c6item";
+import { Item } from "@/types/mod4/c67item";
 
 const Page = () => {
    // Estado para armazenar a lista de itens
@@ -8,14 +8,17 @@ const Page = () => {
 
    // Função para adicionar um novo item à lista
    const addNewItem = (text: string) => {
-      setList([...list, { id: list.length, text, done: false }]);
+      setList([...list, { 
+         id: list.length, 
+         text, 
+         done: false }]);
    };
 
    // Função para editar o texto de um item específico
    const editItemText = (id: number, newText: string) => {
       setList(
          list.map(t => {
-            if (t.id === id) t.text = newText; 
+            if (t.id === id) t.text = newText;                
             return t;
          })
       );

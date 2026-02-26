@@ -2,7 +2,7 @@
 import { useReducer } from "react";
 import { listReducer } from "@/reducers/mod4/c789&10listReducer";
 import { useState } from "react";
-import { Item } from "@/types/mod4/c67item";
+//import { Item } from "@/types/mod4/c67item";
 // Reducer responsável por controlar as mudanças na lista
 
 const Page = () => {
