@@ -46,17 +46,20 @@ const Page = () => {
   };
 
   const handleRemove = (id: number) => {
-  if(!window.confirm('Tem certeza que deseja excluir ?'))return;
-   dispatch({
-      type: 'remove',
-      payload: { id }
-   })
-  }
+    if (!window.confirm("Tem certeza que deseja excluir?")) return;
+
+    dispatch({
+      type: "remove",
+      payload: { id },
+    });
+  };
+
   const handleKeyUp = (e: React.KeyboardEvent<HTMLInputElement>) => {
-   if (e.key === "Enter") {
-     handleAddButton();
-   }
- };
+    if (e.key === "Enter") {
+      handleAddButton();
+    }
+  };
+
   return (
     <div className="container mx-auto">
       <h1 className="my-4 text-center text-4xl">Lista de Tarefas</h1>
@@ -98,9 +101,10 @@ const Page = () => {
               Editar
             </button>
 
-            <button 
-               onClick={()=> handleRemove(item.id)}
-               className="mx-4 text-white hover:text-gray-500">
+            <button
+              onClick={() => handleRemove(item.id)}
+              className="mx-4 text-white hover:text-gray-500"
+            >
               Excluir
             </button>
           </li>

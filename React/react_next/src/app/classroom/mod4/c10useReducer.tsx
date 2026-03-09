@@ -1,1 +1,0 @@
-//usando Reducer 2, aula 10 continuar com codigo de C9 aqui! a ultima aula de C9 ja esta em page.tsx
