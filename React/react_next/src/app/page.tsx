@@ -1,7 +1,7 @@
 "use client"
 
-import { Header } from "@/components/mod4/c12Header";
-import { CountContext, CountInitialData } from "@/contexts/mod4/c12CountContext";
+import { Header } from "@/components/04-mod/12-header";
+import { CountContext, CountInitialData } from "@/contexts/04-mod/12-count-context";
 
 const Page = () => {
    return (
