@@ -22,3 +22,21 @@ const Page = () => {
 };
 
 export default Page;
+
+/*
+==========================================================
+  CLASS 12-15: Context API Provider
+==========================================================
+
+This lesson introduces the React Context API.
+
+Concepts covered:
+- Context creation
+- Provider components
+- Shared state
+- Avoiding prop drilling
+- Global data access
+
+The Provider shares values with all components
+inside its tree.
+*/
